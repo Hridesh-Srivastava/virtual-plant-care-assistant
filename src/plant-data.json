@@ -1,0 +1,24 @@
+{
+    "Aloe Vera": {
+      "type": "Succulent",
+      "wateringFrequency": 14,
+      "careTips": "Place in indirect sunlight and water every 2 weeks.",
+      "lastWatered": null,
+      "dateAdded": "2024-10-20T00:00:00.000Z"
+    },
+    "Money Plant": {
+      "type": "Climber",
+      "wateringFrequency": 7,
+      "careTips": "Keep in indirect sunlight and water once a week.",
+      "lastWatered": null,
+      "dateAdded": "2024-10-20T00:00:00.000Z"
+    },
+    "Peace Lily": {
+      "type": "Flowering Plant",
+      "wateringFrequency": 5,
+      "careTips": "Keep soil moist but not soggy, place in shade.",
+      "lastWatered": null,
+      "dateAdded": "2024-10-20T00:00:00.000Z"
+    }
+  }
+  
