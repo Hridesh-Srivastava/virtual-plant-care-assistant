@@ -195,11 +195,16 @@ import {
     savePlantsToJSON
   } from 'virtual-plant-care-assistant';
   
+  const logSection = (title) => {
+    console.log(`\n${title}`);
+    console.log('='.repeat(title.length));
+  };
+  
   const runTests = async () => {
     console.log('===== VIRTUAL PLANT CARE ASSISTANT DEMO =====\n');
   
     // 1. Add some plants
-    console.log('1. ADDING PLANTS:');
+    logSection('1. ADDING PLANTS');
     try {
       console.log(addPlant('Monstera', 'Tropical', 7, 'Keep soil moist but not soggy'));
       console.log(addPlant('Snake Plant', 'Succulent', 14, 'Allow soil to dry completely between waterings'));
@@ -210,7 +215,7 @@ import {
     }
   
     // 2. List all plants
-    console.log('2. LISTING ALL PLANTS:');
+    logSection('2. LISTING ALL PLANTS');
     try {
       const plants = listPlants();
       console.log(plants);
@@ -220,7 +225,7 @@ import {
     }
   
     // 3. Get info for a specific plant
-    console.log('3. GETTING PLANT INFO:');
+    logSection('3. GETTING PLANT INFO');
     try {
       const monsteraInfo = getPlantInfo('Monstera');
       console.log(monsteraInfo);
@@ -230,7 +235,7 @@ import {
     }
   
     // 4. Water a plant
-    console.log('4. WATERING A PLANT:');
+    logSection('4. WATERING A PLANT');
     try {
       const waterResult = waterPlant('Snake Plant');
       console.log(waterResult);
@@ -240,7 +245,7 @@ import {
     }
   
     // 5. Get care tips
-    console.log('5. GETTING CARE TIPS:');
+    logSection('5. GETTING CARE TIPS');
     try {
       const careTips = getCareTips('Pothos');
       console.log(careTips);
@@ -250,7 +255,7 @@ import {
     }
   
     // 6. Update a plant
-    console.log('6. UPDATING A PLANT:');
+    logSection('6. UPDATING A PLANT');
     try {
       const updateResult = updatePlant('Monstera', {
         wateringFrequency: 5,
@@ -263,7 +268,7 @@ import {
     }
   
     // 7. Check watering needs
-    console.log('7. CHECKING WATERING NEEDS:');
+    logSection('7. CHECKING WATERING NEEDS');
     try {
       const needsWatering = checkWateringNeeds();
       console.log(needsWatering);
@@ -273,9 +278,9 @@ import {
     }
   
     // 8. Save plants data to file
-    console.log('8. SAVING PLANTS DATA:');
+    logSection('8. SAVING PLANTS DATA');
     try {
-      const saveResult = await savePlantsToJSON('./src/plant-data.json');
+      const saveResult = await savePlantsToJSON('./my-plants-data.json');
       console.log(saveResult);
       console.log('✅ Plants data saved successfully\n');
     } catch (error) {
@@ -283,9 +288,9 @@ import {
     }
   
     // 9. Load plants from file
-    console.log('9. LOADING PLANTS DATA:');
+    logSection('9. LOADING PLANTS DATA');
     try {
-      const loadResult = await loadPlantsFromJSON('./src/plant-data.json');
+      const loadResult = await loadPlantsFromJSON('./my-plants-data.json');
       console.log(loadResult);
       console.log('✅ Plants data loaded successfully\n');
     } catch (error) {
@@ -293,7 +298,7 @@ import {
     }
   
     // 10. Delete a plant
-    console.log('10. DELETING A PLANT:');
+    logSection('10. DELETING A PLANT');
     try {
       const deleteResult = deletePlant('Pothos');
       console.log(deleteResult);
