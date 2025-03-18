@@ -18,5 +18,12 @@ A Node.js package to help you manage and track your plants' care needs.
 
 ### Global Installation (for CLI usage)
 
-```bash
+```
 npm install -g virtual-plant-care-assistant
+```
+
+### Local Installation (for use in your project)
+
+```
+npm install virtual-plant-care-assistant
+```
