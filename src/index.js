@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { createInterface } from "readline/promises"
 import {
   addPlant,
