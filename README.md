@@ -37,3 +37,44 @@ If installed globally, simply run:
 ```
 plant-care
 ```
+
+This will start an interactive CLI where you can:
+
+- Add new plants
+- Get information about your plants
+- Water your plants
+- Get care tips
+- List all your plants
+- Delete plants
+- Update plant information
+- Check which plants need watering
+- Save/load your plant data
+
+## As a Module in Your Project
+```
+import { 
+  addPlant, 
+  waterPlant, 
+  getPlantInfo, 
+  listPlants,
+  checkWateringNeeds 
+} from 'virtual-plant-care-assistant';
+
+// Add a new plant
+addPlant('Monstera', 'Tropical', 7, 'Keep soil moist but not soggy');
+
+// Water a plant
+waterPlant('Monstera');
+
+// Get information about a plant
+const plantInfo = getPlantInfo('Monstera');
+console.log(plantInfo);
+
+// List all plants
+const allPlants = listPlants();
+console.log(allPlants);
+
+// Check which plants need watering
+const needsWatering = checkWateringNeeds();
+console.log(needsWatering);
+```
