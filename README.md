@@ -27,3 +27,13 @@ npm install -g virtual-plant-care-assistant
 ```
 npm install virtual-plant-care-assistant
 ```
+
+## Usage
+
+### As a Command-Line Tool
+
+If installed globally, simply run:
+
+```
+plant-care
+```
