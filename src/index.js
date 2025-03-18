@@ -14,7 +14,7 @@ import {
   loadPlantsFromJSON,
 } from "./plantManager.js"
 
-const DATA_FILE = "./plant-data.json"
+const DATA_FILE = "./my-plants-data.json"
 
 const displayMenu = () => {
   console.log("\n===== Virtual Plant Care Assistant =====")
@@ -40,7 +40,7 @@ const main = async () => {
 
   try {
     // Try to load existing data
-    loadPlantsFromJSON(DATA_FILE)
+   await loadPlantsFromJSON(DATA_FILE)
   } catch (error) {
     console.log("No existing data found or error loading data.")
   }
@@ -168,7 +168,7 @@ const main = async () => {
 
         case "9": // Save Plants Data
           try {
-            const result = savePlantsToJSON(DATA_FILE)
+            const result = await savePlantsToJSON(DATA_FILE)
             console.log(result.message)
           } catch (error) {
             console.error(`Error saving data: ${error.message}`)
@@ -177,7 +177,7 @@ const main = async () => {
 
         case "10": // Load Plants Data
           try {
-            const result = loadPlantsFromJSON(DATA_FILE)
+            const result = await loadPlantsFromJSON(DATA_FILE)
             console.log(result.message)
           } catch (error) {
             console.error(`Error loading data: ${error.message}`)
@@ -187,7 +187,7 @@ const main = async () => {
         case "11": // Exit
           // Save data before exiting
           try {
-            savePlantsToJSON(DATA_FILE)
+           await savePlantsToJSON(DATA_FILE)
             console.log("Data saved. Goodbye!")
           } catch (error) {
             console.log("Error saving data before exit.")
