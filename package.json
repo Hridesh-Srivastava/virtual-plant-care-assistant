@@ -1,6 +1,6 @@
 {
   "name": "virtual-plant-care-assistant",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,13 @@
   "bin": {
     "plant-care": "./src/index.js"
   },
-  "keywords": ["plants", "gardening", "plant-care", "watering", "tracker"],
+  "keywords": [
+    "plants",
+    "gardening",
+    "plant-care",
+    "watering",
+    "tracker"
+  ],
   "author": "Hridesh",
   "license": "ISC",
   "repository": {
