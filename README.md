@@ -78,3 +78,132 @@ console.log(allPlants);
 const needsWatering = checkWateringNeeds();
 console.log(needsWatering);
 ```
+
+## API Reference
+
+### Plant Management
+
+#### `addPlant(name, type, wateringFrequency, careTips)`
+
+Adds a new plant to your collection.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+- `type` (string): The type/category of the plant
+- `wateringFrequency` (number): How often to water the plant (in days)
+- `careTips` (string): Care instructions for the plant
+
+
+
+- **Returns**: Object containing the plant information
+
+
+#### `getPlantInfo(name)`
+
+Returns detailed information about a specific plant.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+
+
+
+- **Returns**: Object containing the plant information
+
+
+#### `waterPlant(name)`
+
+Records that you've watered a plant and updates the last watered date.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+
+
+
+- **Returns**: Object with a success message and updated plant information
+
+
+#### `getCareTips(name)`
+
+Returns care tips for a specific plant.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+
+
+
+- **Returns**: Object with the plant name and care tips
+
+
+#### `listPlants()`
+
+Returns a list of all plants in your collection.
+
+- **Returns**: Array of plant objects
+
+
+#### `deletePlant(name)`
+
+Removes a plant from your collection.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+
+
+
+- **Returns**: Object with a success message and the deleted plant information
+
+
+#### `updatePlant(name, updates)`
+
+Updates information for an existing plant.
+
+- **Parameters**:
+
+- `name` (string): The name of the plant
+- `updates` (object): Object containing the fields to update
+
+
+
+- **Returns**: Object with the updated plant information
+
+
+### Watering Management
+
+#### `checkWateringNeeds()`
+
+Returns a list of plants that need watering based on their watering frequency.
+
+- **Returns**: Array of plants that need watering
+
+
+### Data Persistence
+
+#### `savePlantsToJSON(filePath)`
+
+Saves your plant data to a JSON file.
+
+- **Parameters**:
+
+- `filePath` (string): Path where the JSON file should be saved
+
+
+
+- **Returns**: Object with a success message
+
+
+#### `loadPlantsFromJSON(filePath)`
+
+Loads plant data from a JSON file.
+
+- **Parameters**:
+
+- `filePath` (string): Path to the JSON file
+
+
+
+- **Returns**: Object with a success message and count of loaded plants
