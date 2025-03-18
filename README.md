@@ -50,35 +50,6 @@ This will start an interactive CLI where you can:
 - Check which plants need watering
 - Save/load your plant data
 
-## As a Module in Your Project
-```
-import { 
-  addPlant, 
-  waterPlant, 
-  getPlantInfo, 
-  listPlants,
-  checkWateringNeeds 
-} from 'virtual-plant-care-assistant';
-
-// Add a new plant
-addPlant('Monstera', 'Tropical', 7, 'Keep soil moist but not soggy');
-
-// Water a plant
-waterPlant('Monstera');
-
-// Get information about a plant
-const plantInfo = getPlantInfo('Monstera');
-console.log(plantInfo);
-
-// List all plants
-const allPlants = listPlants();
-console.log(allPlants);
-
-// Check which plants need watering
-const needsWatering = checkWateringNeeds();
-console.log(needsWatering);
-```
-
 ## API Reference
 
 ### Plant Management
@@ -207,3 +178,140 @@ Loads plant data from a JSON file.
 
 
 - **Returns**: Object with a success message and count of loaded plants
+
+## Example for testing (As a Module in Your Project) :
+```
+
+import { 
+    addPlant, 
+    getPlantInfo, 
+    waterPlant, 
+    getCareTips, 
+    listPlants,
+    deletePlant,
+    updatePlant,
+    checkWateringNeeds,
+    loadPlantsFromJSON,
+    savePlantsToJSON
+  } from 'virtual-plant-care-assistant';
+  
+  const runTests = async () => {
+    console.log('===== VIRTUAL PLANT CARE ASSISTANT DEMO =====\n');
+  
+    // 1. Add some plants
+    console.log('1. ADDING PLANTS:');
+    try {
+      console.log(addPlant('Monstera', 'Tropical', 7, 'Keep soil moist but not soggy'));
+      console.log(addPlant('Snake Plant', 'Succulent', 14, 'Allow soil to dry completely between waterings'));
+      console.log(addPlant('Pothos', 'Vine', 10, 'Tolerates low light, water when top inch of soil is dry'));
+      console.log('✅ Plants added successfully\n');
+    } catch (error) {
+      console.error('❌ Error adding plants:', error.message);
+    }
+  
+    // 2. List all plants
+    console.log('2. LISTING ALL PLANTS:');
+    try {
+      const plants = listPlants();
+      console.log(plants);
+      console.log('✅ Plants listed successfully\n');
+    } catch (error) {
+      console.error('❌ Error listing plants:', error.message);
+    }
+  
+    // 3. Get info for a specific plant
+    console.log('3. GETTING PLANT INFO:');
+    try {
+      const monsteraInfo = getPlantInfo('Monstera');
+      console.log(monsteraInfo);
+      console.log('✅ Plant info retrieved successfully\n');
+    } catch (error) {
+      console.error('❌ Error getting plant info:', error.message);
+    }
+  
+    // 4. Water a plant
+    console.log('4. WATERING A PLANT:');
+    try {
+      const waterResult = waterPlant('Snake Plant');
+      console.log(waterResult);
+      console.log('✅ Plant watered successfully\n');
+    } catch (error) {
+      console.error('❌ Error watering plant:', error.message);
+    }
+  
+    // 5. Get care tips
+    console.log('5. GETTING CARE TIPS:');
+    try {
+      const careTips = getCareTips('Pothos');
+      console.log(careTips);
+      console.log('✅ Care tips retrieved successfully\n');
+    } catch (error) {
+      console.error('❌ Error getting care tips:', error.message);
+    }
+  
+    // 6. Update a plant
+    console.log('6. UPDATING A PLANT:');
+    try {
+      const updateResult = updatePlant('Monstera', {
+        wateringFrequency: 5,
+        careTips: 'Keep in bright indirect light and mist leaves regularly for humidity'
+      });
+      console.log(updateResult);
+      console.log('✅ Plant updated successfully\n');
+    } catch (error) {
+      console.error('❌ Error updating plant:', error.message);
+    }
+  
+    // 7. Check watering needs
+    console.log('7. CHECKING WATERING NEEDS:');
+    try {
+      const needsWatering = checkWateringNeeds();
+      console.log(needsWatering);
+      console.log('✅ Watering needs checked successfully\n');
+    } catch (error) {
+      console.error('❌ Error checking watering needs:', error.message);
+    }
+  
+    // 8. Save plants data to file
+    console.log('8. SAVING PLANTS DATA:');
+    try {
+      const saveResult = await savePlantsToJSON('./src/plant-data.json');
+      console.log(saveResult);
+      console.log('✅ Plants data saved successfully\n');
+    } catch (error) {
+      console.error('❌ Error saving plants data:', error.message);
+    }
+  
+    // 9. Load plants from file
+    console.log('9. LOADING PLANTS DATA:');
+    try {
+      const loadResult = await loadPlantsFromJSON('./src/plant-data.json');
+      console.log(loadResult);
+      console.log('✅ Plants data loaded successfully\n');
+    } catch (error) {
+      console.error('❌ Error loading plants data:', error.message);
+    }
+  
+    // 10. Delete a plant
+    console.log('10. DELETING A PLANT:');
+    try {
+      const deleteResult = deletePlant('Pothos');
+      console.log(deleteResult);
+      
+      // Verify deletion by listing remaining plants
+      console.log('Remaining plants:');
+      console.log(listPlants());
+      console.log('✅ Plant deleted successfully\n');
+    } catch (error) {
+      console.error('❌ Error deleting plant:', error.message);
+    }
+  
+    console.log('===== DEMO COMPLETED =====');
+  };
+  
+  runTests().catch(error => {
+    console.error('Test failed with error:', error);
+  });
+```
+
+
