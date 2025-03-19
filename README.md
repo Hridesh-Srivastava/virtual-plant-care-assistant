@@ -50,7 +50,7 @@ This will start an interactive CLI where you can:
 - Check which plants need watering
 - Save/load your plant data
 
-## ⚠️ Important Note for Development
+<h1>⚠️ Important Note for Development </h1>
 
 ### Using Nodemon
 
