@@ -1,6 +1,6 @@
 {
   "name": "virtual-plant-care-assistant",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
