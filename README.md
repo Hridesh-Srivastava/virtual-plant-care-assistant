@@ -50,6 +50,30 @@ This will start an interactive CLI where you can:
 - Check which plants need watering
 - Save/load your plant data
 
+## ⚠️ Important Note for Development
+
+### Using Nodemon
+
+If you're using nodemon for development, you may encounter an infinite restart loop when the package saves data to JSON files. This happens because nodemon detects the file changes and restarts your application.
+
+**Solution:**
+
+Create a `nodemon.json` configuration file in your project root with the following content:
+
+```json
+{
+  "ignore": ["*.json", "node_modules/*"]
+}
+```
+
+This will tell nodemon to ignore changes to JSON files, preventing the infinite restart loop.
+
+Alternatively, you can run your tests with regular Node instead of nodemon:
+
+```
+node test-app.js
+```
+
 ## API Reference
 
 ### Plant Management
